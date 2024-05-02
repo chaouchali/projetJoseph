@@ -1,0 +1,112 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Se coonecter!{% endblock %}
+{% block preload %}
+    
+{% endblock %}
+{% block header %}
+{% endblock %}
+{% block aside %}
+{% endblock %}
+{% block footer %}
+{% endblock %}
+{% block body %}
+{# <form method="post">
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        Sign in
+    </button>
+</form> #}
+<body class="hold-transition login-page">
+
+<div class="login-box">
+  <!-- /.login-logo -->
+  <div class="card card-outline card-primary">
+    <div class="card-header text-center">
+      <a href="../../index2.html" class="h1"><b>Nom </b>Projet</a>
+    </div>
+    <div class="card-body">
+      <p class="login-box-msg">Connectez-vous pour démarrer votre session</p>
+
+      <form form method="post">
+        <div class="input-group mb-3">
+        <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+        <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-envelope"></span>
+            </div>
+          </div>
+        </div>
+        <div class="input-group mb-3">
+        <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+        <div class="input-group-append">
+            <div class="input-group-text">
+              <span class="fas fa-lock"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          {# <div class="col-8">
+            <div class="icheck-primary">
+              <input type="checkbox" id="remember">
+              <label for="remember">
+                Remember Me
+              </label>
+            </div> #}
+            <input type="hidden" name="_csrf_token"
+            value="{{ csrf_token('authenticate') }}"
+     >
+          </div>
+          <!-- /.col -->
+          <div class="col-4">
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+          </div>
+          <!-- /.col -->
+        </div>
+      </form>
+
+      <div class="social-auth-links text-center mt-2 mb-3">
+      {% if error %}
+    <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+{% endif %}
+
+{% if app.user %}
+    <div class="mb-3">
+        You are logged in as {{ app.user.userIdentifier }}, <a href="{{ path('app_logout') }}">Logout</a>
+    </div>
+{% endif %}
+<p class="mb-1">
+<a href="">Mot de passe oublier</a>
+</p>
+      </div>
+      <!-- /.social-auth-links -->
+
+      
+
+    <!-- /.card-body -->
+  </div>
+  <!-- /.card -->
+</div>
+<!-- /.login-box -->
+
+</body>
+{% endblock %}
